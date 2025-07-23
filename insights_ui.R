@@ -1,6 +1,4 @@
-# Dashboard Analisis Kemiskinan Pulau Sulawesi
-# Author: Peneliti Kebijakan Sosial
-# Data: Analisis SOVI (Social Vulnerability Index) Sulawesi
+
 
 library(shiny)
 library(shinydashboard)
