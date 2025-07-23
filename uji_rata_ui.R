@@ -26,13 +26,13 @@ uji_varians_server <- function(id) {
     plot_data <- reactiveVal(NULL)
     
     observeEvent(input$run_test, {
-      # Ambil data dan bersihkan NA (mengikuti pola uji rata-rata)
+      # Ambil data dan bersihkan missing valu
       var1 <- data_sovi[[input$var1]]
       var2 <- data_sovi[[input$var2]]
       var1 <- na.omit(var1)
       var2 <- na.omit(var2)
       
-      # Jalankan uji varians
+      # uji varians
       result <- var.test(var1, var2)
       
       # Buat interpretasi (mengikuti pola uji rata-rata)
@@ -58,7 +58,7 @@ uji_varians_server <- function(id) {
       interpretasi_text(interpretasi)
     })
     
-    # Plot (sama seperti sebelumnya tapi menggunakan plot_data reactive)
+    # Plot
     output$variance_plot <- renderPlot({
       req(plot_data())
       dat <- plot_data()
@@ -79,7 +79,7 @@ uji_varians_server <- function(id) {
       }
     )
     
-    # Download Word (mengikuti pola uji rata-rata)
+    # Download Word 
     output$download_report <- downloadHandler(
       filename = function() {
         paste0("hasil_uji_varians_", Sys.Date(), ".docx")
