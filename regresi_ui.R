@@ -249,7 +249,7 @@ regresi_server <- function(id) {
       cat("Catatan: *** p<0.001, ** p<0.01, * p<0.05, . p<0.1\n")
     })
     
-    # Download handler untuk laporan lengkap
+    # Download handler untuk laporan
     output$dl_full_report <- downloadHandler(
       filename = function() {
         paste0("regression_report_", Sys.Date(), ".docx")
