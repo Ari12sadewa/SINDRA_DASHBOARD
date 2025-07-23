@@ -61,7 +61,7 @@ server <- function(input, output, session) {
   asumsi_server("asumsi")
   uji_rata_server("uji_rata2")
   uji_proporsi_server("uji_proporsi")
-  server_uji_varians(input, output, session)
+  uji_varians_server("uji_varians")
   server_anova(input, output, session) 
   regresi_server("regresi")
   ins_server(input, output, session)

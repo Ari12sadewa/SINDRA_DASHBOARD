@@ -1,0 +1,12 @@
+name: SINDRA
+title: SINDRA
+username: ari12sadewa
+account: ari12sadewa
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15112179
+bundleId:
+url: https://ari12sadewa.shinyapps.io/SINDRA/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
