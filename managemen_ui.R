@@ -67,7 +67,7 @@ data_management_server <- function(id) {
       df[substr(df[[1]], 1, 2) %in% kode_selected, ]
     })
     
-    # FIXED: Pilih kolom untuk ditampilkan - EXCLUDE kolom pertama dari pilihan
+    # : Pilih kolom untuk ditampilkan - EXCLUDE kolom pertama dari pilihan
     output$column_selector <- renderUI({
       df <- filtered_data_temp()
       available_columns <- names(df)[-1]  # Exclude kolom pertama
@@ -81,7 +81,7 @@ data_management_server <- function(id) {
       )
     })
     
-    # FIXED: Simpan ke global - selalu sertakan kolom pertama
+    # : Simpan ke global - selalu sertakan kolom pertama
     observeEvent(input$confirm_filter, {
       df_original <- get("data_sovi", envir = .GlobalEnv)
       first_col_name <- names(df_original)[1]
@@ -114,7 +114,7 @@ data_management_server <- function(id) {
       }
     })
     
-    # FIXED: Tampilkan datatable - selalu sertakan kolom pertama
+    # : Tampilkan datatable - selalu sertakan kolom pertama
     output$data_preview <- DT::renderDataTable({
       df <- filtered_data_temp()
       first_col_name <- names(df)[1]
@@ -133,7 +133,7 @@ data_management_server <- function(id) {
       DT::datatable(df, options = list(pageLength = 10, scrollX = TRUE))
     })
     
-    # FIXED: Download handler CSV - selalu sertakan kolom pertama
+    # : Download handler CSV - selalu sertakan kolom pertama
     output$download_csv <- downloadHandler(
       filename = function() {
         paste0("data_filtered_", Sys.Date(), ".csv")
@@ -154,7 +154,7 @@ data_management_server <- function(id) {
       }
     )
     
-    # FIXED: Download handler XLSX - selalu sertakan kolom pertama
+    # : Download handler XLSX - selalu sertakan kolom pertama
     output$download_xlsx <- downloadHandler(
       filename = function() {
         paste0("data_filtered_", Sys.Date(), ".xlsx")
