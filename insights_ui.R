@@ -78,7 +78,7 @@ ins_ui <- function(id){
                   DT::dataTableOutput("priority_table")
                 ),
                 
-                # Top 10 Poorest
+                # Top 10 miskin
                 box(
                   title = "10 Wilayah Termiskin", 
                   status = "danger", 
@@ -89,14 +89,14 @@ ins_ui <- function(id){
               ),
               
               fluidRow(
-                # Main Interpretation
+                # Main interpretasi
                 box(
                   title = "Interpretasi & Rekomendasi Strategis", 
                   status = "info", 
                   solidHeader = TRUE,
                   width = 12,
                   
-                  # Temuan Utama
+                  # Temuan utama
                   div(
                     style = "background-color: #d1ecf1; border: 1px solid #bee5eb; border-radius: 5px; padding: 15px; margin: 10px 0;",
                     h4("Temuan Utama", style = "color: #0c5460;"),
@@ -151,7 +151,7 @@ ins_server <- function(input, output, session) {
   })
   
   
-  # Tambahkan di bagian server function, ganti bagian output interpretasi map yang ada
+
   
   # Interpretasi Map Output
   output$`Interpretasi Map` <- renderText({
