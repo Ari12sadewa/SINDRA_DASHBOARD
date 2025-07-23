@@ -26,16 +26,16 @@ uji_varians_server <- function(id) {
     plot_data <- reactiveVal(NULL)
     
     observeEvent(input$run_test, {
-      # Ambil data dan bersihkan NA 
+      # Ambil data dan bersihkan missing valu
       var1 <- data_sovi[[input$var1]]
       var2 <- data_sovi[[input$var2]]
       var1 <- na.omit(var1)
       var2 <- na.omit(var2)
       
-      # Jalankan uji varians
+      # uji varians
       result <- var.test(var1, var2)
       
-      # Buat interpretasi 
+      # Buat interpretasi (mengikuti pola uji rata-rata)
       interpretasi <- paste0(
         "Hasil uji varians antara variabel ", input$var1, " dan ", input$var2, ":\n",
         "F-statistic = ", round(result$statistic, 4), "\n",
@@ -58,7 +58,7 @@ uji_varians_server <- function(id) {
       interpretasi_text(interpretasi)
     })
     
-    # Plot 
+    # Plot
     output$variance_plot <- renderPlot({
       req(plot_data())
       dat <- plot_data()
